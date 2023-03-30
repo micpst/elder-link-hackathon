@@ -37,6 +37,7 @@ services:
       - "3000:3000"
     volumes:
       - ${PWD}/services/client/:/app
+      - /app/node_modules
     entrypoint: ["npm", "run", "dev"]
     depends_on:
       - rest
