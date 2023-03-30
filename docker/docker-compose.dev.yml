@@ -18,6 +18,29 @@ services:
       timeout: 5s
       retries: 5
 
+#  proxy:
+#    image: nginx
+#    volumes:
+#      - ${PWD}/services/proxy/nginx.conf:/etc/nginx/nginx.conf:ro
+#    ports:
+#      - "80:80"
+#    depends_on:
+#      - rest
+#      - client
+
+  client:
+    build:
+      context: ${PWD}/services/client
+    environment:
+      VITE_REST_URL: http://localhost:8000/rest
+    ports:
+      - "3000:3000"
+    volumes:
+      - ${PWD}/services/client/:/app
+    entrypoint: ["npm", "run", "dev"]
+    depends_on:
+      - rest
+
   rest:
     build:
       context: ${PWD}/services/rest
