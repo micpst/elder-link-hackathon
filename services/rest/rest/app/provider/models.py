@@ -5,6 +5,7 @@ from django.db.models import CharField, DecimalField, EmailField, TextChoices
 
 from rest.common.models import BaseModel
 
+
 class Activity(Enum):
     TRANSPORTATION = "TRANSPORTATION"
     SHOPPING = "SHOPPING"
@@ -27,4 +28,6 @@ class Provider(BaseModel):
     phone = CharField(max_length=20, null=False, blank=False, unique=True)
     longitude = DecimalField(max_digits=9, decimal_places=6)
     latitude = DecimalField(max_digits=9, decimal_places=6)
-    activities = ArrayField(CharField(max_length=255, choices=Activity.choices, null=False, blank=False))
+    activities = ArrayField(
+        CharField(max_length=255, choices=Activity.choices, null=False, blank=False)
+    )
