@@ -34,6 +34,7 @@ const SwipePage = () => {
     const [user, setUser] = useState(0);
     const [finished, setFinished] = useState(false);
 
+
     const handleLogout = async () => {
         await auth.signOut();
     };
@@ -41,35 +42,59 @@ const SwipePage = () => {
 
 
 
-    const getData = async () => {
 
-        try {
-            const response = await axios.get('http://localhost/rest/providers', {
+
+
+    const getData = async () => {
+        const ticketJson = window.localStorage.getItem('ticket');
+
+        if (ticketJson !== null) {
+            const geo = JSON.parse(ticketJson);
+            const { latitude, longitude, activities } = geo;
+            axios.get(`http://localhost/rest/providers?latitude=${latitude}&longitude=${longitude}&activities=${activities.join(',')}`, {
                 headers: {
                     Accept: 'application/json'
                 }
-            });
-            setProviders(response.data);
-        } catch (error) {
-            console.error(error);
+            })
+                .then(response => {
+                    setProviders(response.data);
+                    console.log(response.data);
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+
+        } else {
+            console.error('ticket is null');
         }
         setUser(0);
         setFinished(false);
     };
     useEffect(() => {
-        axios.get('http://localhost/rest/providers', {
-            headers: {
-                Accept: 'application/json'
-            }
-        })
-            .then(response => {
-                setProviders(response.data);
-                console.log(response.data);
+        const ticketJson = window.localStorage.getItem('ticket');
+
+        if (ticketJson !== null) {
+            const geo = JSON.parse(ticketJson);
+            const { latitude, longitude, activities } = geo;
+            axios.get(`http://localhost/rest/providers?latitude=${latitude}&longitude=${longitude}&activities=${activities.join(',')}`, {
+                headers: {
+                    Accept: 'application/json'
+                }
             })
-            .catch(error => {
-                console.error(error);
-            });
+                .then(response => {
+                    setProviders(response.data);
+                    console.log(response.data);
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+
+        } else {
+            console.error('ticket is null');
+        }
+
     }, []);
+
 
 
 
@@ -102,14 +127,13 @@ const SwipePage = () => {
 
 
 
-
     return providers.length > 0 && (<div className='md:flex md:justify-center '>
         <div className='bg-white h-screen md:w-96 md:flex md:flex-col '>
             <div className='flex h-16 justify-between  items-center mb-1 shadow-md rounded-lg bg-white'>
                 <div className='w-1/3 pl-6'>
                     <button className='h-12 w-12 flex ' onClick={() => {
 
-                    }}><SettingIcon /></button>
+                    }}><FiltrIcon className='fill-slate-400' /></button>
 
                 </div>
                 <div className="text-green-400 flex w-1/3 items-center flex-col ">
@@ -128,7 +152,7 @@ const SwipePage = () => {
                         <div className='flex gap-2'><div className='text-3xl font-regular'>{(providers[user] as Provider).gender === "FEMALE" ? "Pani" : "Pan"}</div>
                             <div className='text-3xl font-bold flex items-center'>{(providers[user] as Provider).first_name}</div></div>
                         <div className='text-2xl font-semibold'>{(providers[user] as Provider).age} lat</div></div>
-                    <div className='text-3xl font-medium flex items-center pr-1'>{(providers[user] as Provider).phone}</div>
+                    <div className='text-3xl font-medium flex items-center pr-1'><a href={`tel:${(providers[user] as Provider).phone}`}>{(providers[user] as Provider).phone.slice(3)}</a></div>
                 </div>
 
             </div>
@@ -147,7 +171,7 @@ const SwipePage = () => {
                     </button>
                 </div> </> : (<div className='flex flex-col items-center justify-center'>
                     <div className='text-4xl font-bold text-center mt-24'>Brak dostępnych wolontariuszy</div>
-                    <button className=' flex flex-col items-center mt-24 p-2 rounded-lg shadow-md bg-green-100'><div className='w-24 h-24 p-4 rounded-full bg-white shadow-md '><FiltrIcon /></div>
+                    <button className=' flex flex-col items-center mt-24 p-2 rounded-lg shadow-md bg-green-100'><div className='w-24 h-24 p-4 rounded-full bg-white shadow-md '><FiltrIcon className='fill-green-400' /></div>
                         <div className='text-3xl font-semibold'>Dopasuj cechy</div>
                     </button>
                     <button onClick={getData} className=' flex flex-col items-center mt-24 p-2 rounded-lg shadow-md bg-green-100'><div className='w-24 h-24 p-4 rounded-full bg-white shadow-md '><RefreshIcon /></div>
