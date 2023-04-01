@@ -1,11 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import { IProviderSliceState } from '../../types/IProviderSliceState';
-import { createProvider } from '../thunks/providerThunk';
+import { createProvider, getProvider } from '../thunks/providerThunk';
 
 const initialState: IProviderSliceState = {
   user: null,
   createProviderStatus: null,
+  providers: null,
 };
 
 export const providerSlice = createSlice({

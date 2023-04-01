@@ -10,8 +10,12 @@ class ProviderAdmin(ModelAdmin):
         "email",
         "first_name",
         "last_name",
+        "age",
+        "gender",
+        "max_distance",
         "phone",
         "longitude",
         "latitude",
         "activities",
+        "profile_photo"
     )
