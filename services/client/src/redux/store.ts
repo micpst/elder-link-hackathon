@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import providerReducer from './features/providerSlice';
+import { likedReducer } from './features/likedReducer';
 
 export const store = configureStore({
   reducer: {

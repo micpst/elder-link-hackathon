@@ -5,17 +5,18 @@ import { supabase } from '../../supabaseClient';
 import axios from 'axios';
 import { set } from 'react-hook-form';
 import { Provider } from 'react-redux';
-// import { formatIncompletePhoneNumber } from 'phone-number-input';
+import { routePaths } from '../../constants';
 
 
-import volunteerTestImg from '../../assets/images/volunteerTestImg.jpg'
+import volunteerMan from '../../assets/images/volunteerMan.jpg'
+import secondVol from '../../assets/images/secondVol.jpg'
+import thirdVol from '../../assets/images/thirdVol.jpg'
 import CheckIcon from '../../assets/icons/CheckIcon'
 import XIcon from '../../assets/icons/XIcon'
-import SettingIcon from '../../assets/icons/SettingIcon'
 import StarIcon from '../../assets/icons/StarIcon'
 import RefreshIcon from '../../assets/icons/RefreshIcon';
 import FiltrIcon from '../../assets/icons/FiltrIcon';
-import { routePaths } from '../../constants';
+
 
 
 
@@ -30,16 +31,14 @@ interface Provider {
 
 
 
+
 const SwipePage = () => {
     const { auth } = supabase;
     const [providers, setProviders] = useState([]);
     const [user, setUser] = useState(0);
     const [finished, setFinished] = useState(false);
+    const photos = [volunteerMan, secondVol, thirdVol];
 
-
-    const handleLogout = async () => {
-        await auth.signOut();
-    };
 
 
 
@@ -103,6 +102,7 @@ const SwipePage = () => {
 
 
     const postData = async () => {
+        localStorage.setItem("people", JSON.stringify(providers));
         try {
             const response = await axios.post('http://localhost/rest/notification', {
                 provider_id: 1,
@@ -141,12 +141,12 @@ const SwipePage = () => {
                     <span className="font-medium text-2xl tracking-widest">Link</span>
                 </div>
                 <div className='w-1/3 flex justify-end items-center pr-6 '>
-                    <button onClick={() => { console.log("star") }} className='h-12 w-12 flex '><StarIcon /></button>
+                    <Link to={routePaths.liked} className='h-12 w-12 flex '><StarIcon /></Link>
 
                 </div>
             </div>
             {finished !== true ? <><div className=' mx-4 bg-slate-200 rounded-xl shadow-md'>
-                <div className='rounded-xl overflow-hidden '><img src={volunteerTestImg} /></div>
+                <div className='rounded-xl overflow-hidden '><img src={photos[user]} /></div>
                 <div className='flex justify-between pt-2'>
                     <div className='mb-4 px-1'>
                         <div className='flex gap-2'><div className='text-3xl font-regular'>{(providers[user] as Provider).gender === "FEMALE" ? "Pani" : "Pan"}</div>
@@ -174,7 +174,7 @@ const SwipePage = () => {
                     <Link to={routePaths.createTicket} className=' flex flex-col items-center mt-24 p-2 rounded-lg shadow-md bg-green-100'><div className='w-24 h-24 p-4 rounded-full bg-white shadow-md '><FiltrIcon className='fill-green-400' /></div>
                         <div className='text-3xl font-semibold'>Dopasuj cechy</div>
                     </Link>
-                    <button onClick={getData} className=' flex flex-col items-center mt-24 p-2 rounded-lg shadow-md bg-green-100'><div className='w-24 h-24 p-4 rounded-full bg-white shadow-md '><RefreshIcon /></div>
+                    <button onClick={getData} className=' flex flex-col items-center mt-24 p-2 rounded-lg shadow-md bg-green-100'><div className='w-24 h-24 p-4 rounded-full bg-white shadow-md '><RefreshIcon className='fill-green-400' /></div>
                         <div className='text-3xl font-semibold'>Odśwież opiekunów</div>
                     </button>
                 </div>)}
