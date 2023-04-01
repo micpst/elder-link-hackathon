@@ -2,15 +2,18 @@ import React, { useState, useEffect } from 'react'
 
 import { supabase } from '../../supabaseClient';
 import axios from 'axios';
-
+import { set } from 'react-hook-form';
+import { Provider } from 'react-redux';
 
 import volunteerTestImg from '../../assets/images/volunteerTestImg.jpg'
 import CheckIcon from '../../assets/icons/CheckIcon'
 import XIcon from '../../assets/icons/XIcon'
 import SettingIcon from '../../assets/icons/SettingIcon'
 import StarIcon from '../../assets/icons/StarIcon'
-import { set } from 'react-hook-form';
-import { Provider } from 'react-redux';
+import RefreshIcon from '../../assets/icons/RefreshIcon';
+import FiltrIcon from '../../assets/icons/FiltrIcon';
+
+
 
 interface Provider {
     first_name: string;
@@ -54,7 +57,7 @@ const SwipePage = () => {
         })
             .then(response => {
                 setProviders(response.data);
-                console.log(providers.length);
+                console.log(response.data);
             })
             .catch(error => {
                 console.error(error);
@@ -129,7 +132,15 @@ const SwipePage = () => {
                     }} className='w-28 h-28 bg-green-400 rounded-full p-3 justify-center items-center flex shadow-md' >
                         <CheckIcon />
                     </button>
-                </div> </> : (<div>Brak dostępnych wolontariuszy</div>)}
+                </div> </> : (<div className='flex flex-col items-center justify-center'>
+                    <div className='text-4xl font-bold text-center mt-24'>Brak dostępnych wolontariuszy</div>
+                    <button className=' flex flex-col items-center mt-24 p-2 rounded-lg shadow-md bg-green-100'><div className='w-24 h-24 p-4 rounded-full bg-white shadow-md '><FiltrIcon /></div>
+                        <div className='text-3xl font-semibold'>Dopasuj cechy</div>
+                    </button>
+                    <button className=' flex flex-col items-center mt-24 p-2 rounded-lg shadow-md bg-green-100'><div className='w-24 h-24 p-4 rounded-full bg-white shadow-md '><RefreshIcon /></div>
+                        <div className='text-3xl font-semibold'>Odśwież opiekunów</div>
+                    </button>
+                </div>)}
         </div>
     </div>)
 
