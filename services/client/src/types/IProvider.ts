@@ -5,5 +5,9 @@ export interface IProvider {
   phone: string;
   longitude: number;
   latitude: number;
+  age: number;
+  max_distance: number;
+  gender: 'FEMALE' | 'MALE';
   activities: string[];
+  photo?: File;
 }

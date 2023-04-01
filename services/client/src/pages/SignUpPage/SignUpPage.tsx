@@ -36,6 +36,10 @@ const SignUpPage = () => {
     phone,
     password,
     confirmPassword,
+    age,
+    gender,
+    maxDistance,
+    photo,
   }) => {
     try {
       if (password !== confirmPassword) return;
@@ -60,7 +64,11 @@ const SignUpPage = () => {
         phone,
         latitude: coords.latitude,
         longitude: coords.longitude,
-        activities: [],
+        age: parseInt(age),
+        gender,
+        max_distance: parseInt(maxDistance),
+        activities: ['SHOPPING', 'TRANSPORTATION'],
+        photo,
       };
       dispatch(createProvider(provider));
     } catch (error) {
@@ -205,6 +213,66 @@ const SignUpPage = () => {
             label="Powtórz hasło"
             type="password"
             placeholder="Wpisz hasło ponownie"
+            value={value}
+            onChange={onChange}
+            error={errors.confirmPassword?.message}
+          />
+        )}
+      />
+      <Controller
+        control={control}
+        name="gender"
+        rules={{
+          required: {
+            value: true,
+            message: 'Należy wybrać płeć',
+          },
+        }}
+        render={({ field: { value, onChange } }) => (
+          <Input
+            label="Płeć"
+            type="text"
+            placeholder="Wybierz płeć"
+            value={value}
+            onChange={onChange}
+            error={errors.confirmPassword?.message}
+          />
+        )}
+      />
+      <Controller
+        control={control}
+        name="age"
+        rules={{
+          required: {
+            value: true,
+            message: 'Należy podać wiek',
+          },
+        }}
+        render={({ field: { value, onChange } }) => (
+          <Input
+            label="Wiek"
+            type="number"
+            placeholder="Podaj wiek"
+            value={value}
+            onChange={onChange}
+            error={errors.confirmPassword?.message}
+          />
+        )}
+      />
+      <Controller
+        control={control}
+        name="maxDistance"
+        rules={{
+          required: {
+            value: true,
+            message: 'Należy podać maksymalną odległość w obrębie której chcemy szukać seniorów',
+          },
+        }}
+        render={({ field: { value, onChange } }) => (
+          <Input
+            label="Maksymalna odległość"
+            type="number"
+            placeholder="Podaj maksymalną odległość w km"
             value={value}
             onChange={onChange}
             error={errors.confirmPassword?.message}
