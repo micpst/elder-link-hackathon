@@ -1,40 +1,47 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
+
 import CustomButton from '../../components/CustomButton/CustomButton';
 import useMobile from '../../hooks/useMobile';
-import grandpaImg from '../../assets/images/grandpaImg.jpg';
-import volunteerImg from '../../assets/images/volunteerImg.jpg';
+import volunteerImage from '../../assets/images/volunteer.jpg';
+import seniorImage from '../../assets/images/senior.jpg';
+import { routePaths } from '../../constants';
 
 const LandingPage = () => {
   const isMobile = useMobile();
 
   return (
-    <div className="h-screen flex flex-col justify-center bg-green-400 md:overflow-hidden">
+    <>
       {isMobile ? (
-        <>
-          <h1 className="text-5xl font-bold text-center mb-20">Kim jesteś?</h1>
+        <div className="flex flex-col md:flex-row">
+          <h1 className="text-5xl font-bold text-center mb-20 text-green-400">Kim jesteś?</h1>
           <div className="flex flex-col">
-            <CustomButton text='SENIOR' onClick={() => { }} />
-            <CustomButton text='Opiekun' onClick={() => { }} />
+            <CustomButton text="SENIOR" onClick={() => {}} />
+            <CustomButton text="Opiekun" onClick={() => {}} />
           </div>
-        </>
+        </div>
       ) : (
-        <>
-          <div className='flex justify-around mt-40'>
-            <div className='flex-col'>
-              <img src={grandpaImg} alt="Senior" className="rounded-3xl mb-12 h-2/4 shadow-xl" />
-              <div className='justify-center flex'><CustomButton text='SENIOR' onClick={() => { }} /></div>
-
+        <div className="flex max-h-screen p-10 w-full overflow-hidden">
+          <Link
+            to={routePaths.login}
+            className="relative flex justify-center items-center grayscale hover:grayscale-0"
+          >
+            <img src={seniorImage} />
+            <div className="absolute z-10 flex rounded-lg shadow-md justify-center items-center font-bold text-3xl bg-white w-56 h-16">
+              SENIOR
             </div>
-
-            <h1 className="text-7xl font-bold text-center mt-80">Kim jesteś?</h1>
-            <div className='flex-col'>
-              <img src={volunteerImg} alt="Senior" className="h-2/4 rounded-3xl mb-12 shadow-xl" />
-              <div className='justify-center flex'><CustomButton text='Opiekun' onClick={() => { }} /></div>
+          </Link>
+          <Link
+            to={routePaths.login}
+            className="relative flex justify-center items-center grayscale hover:grayscale-0"
+          >
+            <img src={volunteerImage} />
+            <div className="absolute flex z-10 rounded-lg shadow-md justify-center items-center font-bold text-3xl bg-white w-56 h-16">
+              OPIEKUN
             </div>
-          </div>
-        </>
+          </Link>
+        </div>
       )}
-    </div>
+    </>
   );
 };
 

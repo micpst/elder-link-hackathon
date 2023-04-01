@@ -1,4 +1,7 @@
 import React from 'react'
+
+import { supabase } from '../../supabaseClient';
+
 import volunteerTestImg from '../../assets/images/volunteerTestImg.jpg'
 import CheckIcon from '../../assets/icons/CheckIcon'
 import XIcon from '../../assets/icons/XIcon'
@@ -7,6 +10,11 @@ import StarIcon from '../../assets/icons/StarIcon'
 
 
 const SwipePage = () => {
+  const { auth } = supabase;
+
+  const handleLogout = async () => {
+    await auth.signOut();
+  };
     return (
         <div className='md:flex md:justify-center '>
             <div className='bg-white h-screen md:w-96 md:flex md:flex-col '>
@@ -56,3 +64,4 @@ const SwipePage = () => {
 }
 
 export default SwipePage
+

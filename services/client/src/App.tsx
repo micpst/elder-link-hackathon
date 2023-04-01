@@ -1,6 +1,7 @@
-import SwipePage from './pages/SwipePage/SwipePage';
+import Providers from './providers';
+
 function App() {
-  return <SwipePage />;
+  return <Providers />;
 }
 
 export default App;
