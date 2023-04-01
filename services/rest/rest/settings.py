@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest.app.user",
     "rest.app.provider",
+    "rest.app.notification",
 ]
 
 MIDDLEWARE = [
@@ -158,3 +159,9 @@ SWAGGER_SETTINGS = {
     },
     "USE_SESSION_AUTH": False,
 }
+
+DJANGO_EMAIL_USER = getenv("DJANGO_EMAIL_USER", "")
+DJANGO_EMAIL_PASSWORD = getenv("DJANGO_EMAIL_PASSWORD", "")
+DJANGO_SMS_PHONE = getenv("DJANGO_SMS_PHONE", "")
+DJANGO_SMS_USER = getenv("DJANGO_SMS_USER", "")
+DJANGO_SMS_PASSWORD = getenv("DJANGO_SMS_PASSWORD", "")

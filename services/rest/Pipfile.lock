@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "64b428dcc86e87561413c264b38ca76fcc02ff2cfa1a49e073c2732ba4ecc008"
+            "sha256": "3c0b0cb290411d5598faefd74e4738c3d0ccdad10f18592de4821e8be85d9876"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -335,6 +335,14 @@
             ],
             "markers": "python_version >= '3.5'",
             "version": "==0.4.3"
+        },
+        "twilio": {
+            "hashes": [
+                "sha256:312e25b0a1ca782974a359d95123f270574e6e4b195b0e2095a156219ad7b7ec",
+                "sha256:f43de32cdc27f8853bb02ab0b8703a487beffbb9dcc8118398b6757e1376e6ed"
+            ],
+            "index": "pypi",
+            "version": "==7.17.0"
         },
         "uritemplate": {
             "hashes": [
