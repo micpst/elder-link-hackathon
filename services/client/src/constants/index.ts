@@ -13,3 +13,4 @@ export const BREAKPOINTS = {
 export const imageExtensionsUpload = {
   'image/*': ['.jpeg', '.jpg', '.bmp', '.svg', '.png', '.webp'],
 };
+
