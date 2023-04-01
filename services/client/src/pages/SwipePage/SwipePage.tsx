@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, } from 'react'
+import { Link } from 'react-router-dom';
 
 import { supabase } from '../../supabaseClient';
 import axios from 'axios';
@@ -14,6 +15,7 @@ import SettingIcon from '../../assets/icons/SettingIcon'
 import StarIcon from '../../assets/icons/StarIcon'
 import RefreshIcon from '../../assets/icons/RefreshIcon';
 import FiltrIcon from '../../assets/icons/FiltrIcon';
+import { routePaths } from '../../constants';
 
 
 
@@ -131,9 +133,7 @@ const SwipePage = () => {
         <div className='bg-white h-screen md:w-96 md:flex md:flex-col '>
             <div className='flex h-16 justify-between  items-center mb-1 shadow-md rounded-lg bg-white'>
                 <div className='w-1/3 pl-6'>
-                    <button className='h-12 w-12 flex ' onClick={() => {
-
-                    }}><FiltrIcon className='fill-slate-400' /></button>
+                    <Link to={routePaths.createTicket} className='h-12 w-12 flex ' ><FiltrIcon className='fill-slate-400' /></Link>
 
                 </div>
                 <div className="text-green-400 flex w-1/3 items-center flex-col ">
@@ -171,9 +171,9 @@ const SwipePage = () => {
                     </button>
                 </div> </> : (<div className='flex flex-col items-center justify-center'>
                     <div className='text-4xl font-bold text-center mt-24'>Brak dostępnych wolontariuszy</div>
-                    <button className=' flex flex-col items-center mt-24 p-2 rounded-lg shadow-md bg-green-100'><div className='w-24 h-24 p-4 rounded-full bg-white shadow-md '><FiltrIcon className='fill-green-400' /></div>
+                    <Link to={routePaths.createTicket} className=' flex flex-col items-center mt-24 p-2 rounded-lg shadow-md bg-green-100'><div className='w-24 h-24 p-4 rounded-full bg-white shadow-md '><FiltrIcon className='fill-green-400' /></div>
                         <div className='text-3xl font-semibold'>Dopasuj cechy</div>
-                    </button>
+                    </Link>
                     <button onClick={getData} className=' flex flex-col items-center mt-24 p-2 rounded-lg shadow-md bg-green-100'><div className='w-24 h-24 p-4 rounded-full bg-white shadow-md '><RefreshIcon /></div>
                         <div className='text-3xl font-semibold'>Odśwież opiekunów</div>
                     </button>
