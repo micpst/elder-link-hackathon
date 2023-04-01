@@ -6,12 +6,12 @@
             "created_at": "2023-03-31T22:15:43.636Z",
             "updated_at": "2023-03-31T22:19:13.239Z",
             "first_name": "Paruyr",
-            "last_name": "Gevorgyan",
+            "last_name": "tttt",
             "gender": "MALE",
             "age": 22,
             "max_distance": 5,
-            "email": "gevorgyan.paruyr@gmail.com",
-            "phone": "+48579511207",
+            "email": "gev@gmail.com",
+            "phone": "+48524332424422342424207",
             "longitude": "18.026172",
             "latitude": "53.098651",
             "activities": "[\"TRANSPORTATION\", \"SHOPPING\", \"HOME_VISIT\", \"TECHNOLOGY_ASSISTANCE\", \"MENTAL_HEALTH_SUPPORT\"]"
@@ -214,4 +214,5 @@
             "latitude": "50.064651",
             "activities": "[\"TRANSPORTATION\", \"SHOPPING\", \"HOME_VISIT\", \"MENTAL_HEALTH_SUPPORT\"]"
         }
+    }
 ]
