@@ -52,10 +52,10 @@ const CreateTicketPage = () => {
         {selectedActivities?.map((activity) => (
           <div
             key={activity.value}
-            className="flex border-2 border-green-400 justify-center items-center gap-3 py-1 px-3 rounded-2xl cursor-pointer"
+            className="flex border-2 border-green-400 justify-center items-center gap-3 py-1 px-3 rounded-2xl cursor-pointer shadow-md"
             onClick={() => handleActivityClick(activity)}
           >
-            <span className="text-2xl">{activity.label}</span>
+            <span className="text-2xl text-green-400">{activity.label}</span>
             <div className="h-7 w-7">
               <MinusIcon />
             </div>
@@ -70,10 +70,10 @@ const CreateTicketPage = () => {
           .map((activity) => (
             <div
               key={activity.value}
-              className="flex border justify-center items-center gap-3 py-1 px-3 rounded-2xl cursor-pointer"
+              className="flex border-2 border-gray-400 justify-center items-center gap-3 py-1 px-3 rounded-2xl cursor-pointer shadow-sm"
               onClick={() => handleActivityClick(activity)}
             >
-              <span className="text-2xl">{activity.label}</span>
+              <span className="text-2xl text-gray-400">{activity.label}</span>
               <div className="h-7 w-7">
                 <PlusIcon />
               </div>

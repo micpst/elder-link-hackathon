@@ -17,13 +17,13 @@ const LandingPage = () => {
           <div className="flex flex-col gap-8">
             <Link
               to={routePaths.createTicket}
-              className="shadow text-center w-60 py-6 rounded-lg font-bold text-2xl bg-green-300 text-white hover:bg-green-400"
+              className="shadow text-center w-60 py-6 rounded-lg font-bold text-2xl bg-green-400 text-white hover:bg-green-400"
             >
               SENIOR
             </Link>
             <Link
               to={routePaths.login}
-              className="shadow text-center w-60 py-6 rounded-lg font-bold text-2xl bg-green-300 text-white hover:bg-green-400"
+              className="shadow text-center w-60 py-6 rounded-lg font-bold text-2xl bg-green-400 text-white hover:bg-green-400"
             >
               OPIEKUN
             </Link>

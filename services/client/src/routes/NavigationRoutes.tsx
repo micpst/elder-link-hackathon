@@ -30,8 +30,8 @@ const NavigationRoutes = () => {
           </Route>
           // Guest pages
           <Route element={<GuestRoute />}>
-            <Route path={routePaths.home} element={<LandingPage />} />
             <Route element={<GuestTemplate />}>
+              <Route path={routePaths.home} element={<LandingPage />} />
               <Route path={routePaths.login} element={<LogInPage />} />
               <Route path={routePaths.signup} element={<SignUpPage />} />
               <Route path={routePaths.createTicket} element={<CreateTicketPage />} />
