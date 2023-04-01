@@ -7,6 +7,7 @@ export const routePaths = {
   signup: '/signup',
   settings: '/settings',
   createTicket: '/create-ticket',
+  dashboard: '/dashboard',
 };
 
 export const BREAKPOINTS = {

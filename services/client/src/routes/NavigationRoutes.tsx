@@ -11,6 +11,7 @@ import PrivateTemplate from '../templates/PrivateTemplate/PrivateTemplate';
 import SwipePage from '../pages/SwipePage/SwipePage';
 import LandingPage from '../pages/LandingPage/LandingPage';
 import CreateTicketPage from '../pages/CreateTicketPage/CreateTicketPage';
+import ProviderDashboard from '../pages/ProviderDashboard/ProviderDashboard';
 
 const NavigationRoutes = () => {
   const location = useLocation();
@@ -24,7 +25,7 @@ const NavigationRoutes = () => {
           </Route>
           <Route element={<PrivateRoute />}>
             <Route element={<PrivateTemplate />}>
-              {/* <Route path={routePaths.settings} element={<SettingsPage />} /> */}
+              <Route path={routePaths.dashboard} element={<ProviderDashboard />} />
             </Route>
           </Route>
           // Guest pages

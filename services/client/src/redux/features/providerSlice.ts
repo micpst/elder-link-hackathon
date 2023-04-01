@@ -4,6 +4,7 @@ import { IProviderSliceState } from '../../types/IProviderSliceState';
 import { createProvider } from '../thunks/providerThunk';
 
 const initialState: IProviderSliceState = {
+  user: null,
   createProviderStatus: null,
 };
 
@@ -16,8 +17,10 @@ export const providerSlice = createSlice({
       .addCase(createProvider.pending, (state) => {
         state.createProviderStatus = 'loading';
       })
-      .addCase(createProvider.fulfilled, (state) => {
+      .addCase(createProvider.fulfilled, (state, { payload }) => {
         state.createProviderStatus = 'success';
+        state.user = payload;
+        window.localStorage.setItem('userId', payload.id);
       })
       .addCase(createProvider.rejected, (state) => {
         state.createProviderStatus = 'failed';

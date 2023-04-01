@@ -12,11 +12,21 @@ const LandingPage = () => {
   return (
     <>
       {isMobile ? (
-        <div className="flex flex-col md:flex-row">
+        <div className="flex h-screen flex-col justify-center items-center">
           <h1 className="text-5xl font-bold text-center mb-20 text-green-400">Kim jesteś?</h1>
-          <div className="flex flex-col">
-            <CustomButton text="SENIOR" onClick={() => {}} />
-            <CustomButton text="Opiekun" onClick={() => {}} />
+          <div className="flex flex-col gap-8">
+            <Link
+              to={routePaths.createTicket}
+              className="shadow text-center w-60 py-6 rounded-lg font-bold text-2xl bg-green-300 text-white hover:bg-green-400"
+            >
+              SENIOR
+            </Link>
+            <Link
+              to={routePaths.login}
+              className="shadow text-center w-60 py-6 rounded-lg font-bold text-2xl bg-green-300 text-white hover:bg-green-400"
+            >
+              OPIEKUN
+            </Link>
           </div>
         </div>
       ) : (
