@@ -14,11 +14,13 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 from drf_yasg.openapi import Info
 from drf_yasg.views import get_schema_view
+
+from rest import settings
 
 schema_view = get_schema_view(Info(title="REST API", default_version="v1"), public=True)
 
@@ -29,3 +31,6 @@ urlpatterns = [
     path("rest/notification", include("rest.app.notification.urls")),
     path("rest/providers", include("rest.app.provider.urls")),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

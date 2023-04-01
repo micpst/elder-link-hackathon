@@ -1,7 +1,7 @@
 from enum import Enum
 
 from django.contrib.postgres.fields import ArrayField
-from django.db.models import CharField, DecimalField, EmailField, TextChoices
+from django.db.models import CharField, DecimalField, EmailField, ImageField, TextChoices
 
 from rest.common.models import BaseModel
 
@@ -29,6 +29,9 @@ class Provider(BaseModel):
     longitude = DecimalField(max_digits=9, decimal_places=7)
     latitude = DecimalField(max_digits=9, decimal_places=7)
     activities = ArrayField(
-        base_field=CharField(max_length=255, choices=Activity.choices, null=False, blank=False),
+        base_field=CharField(
+            max_length=255, choices=Activity.choices, null=False, blank=False
+        ),
         blank=True,
     )
+    profile_photo = ImageField(default="")
