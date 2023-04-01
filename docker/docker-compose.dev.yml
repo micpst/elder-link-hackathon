@@ -33,6 +33,8 @@ services:
       context: ${PWD}/services/client
     environment:
       VITE_REST_URL: ${VITE_REST_URL}
+      VITE_SUPABASE_URL: ${VITE_SUPABASE_URL}
+      VITE_SUPABASE_KEY: ${VITE_SUPABASE_KEY}
     volumes:
       - ${PWD}/services/client/:/app
       - /app/node_modules
