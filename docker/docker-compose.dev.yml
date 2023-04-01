@@ -63,6 +63,7 @@ services:
       - "8000:8000"
     volumes:
       - ${PWD}/services/rest/:/app
+      - media:/app/media
     entrypoint: ["./docker-entrypoint.sh"]
     depends_on:
       db:
@@ -70,3 +71,4 @@ services:
 
 volumes:
   pgdata:
+  media:

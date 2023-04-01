@@ -14,4 +14,5 @@ class ProviderSerializer(ModelSerializer):
             "longitude",
             "latitude",
             "activities",
+            "profile_photo",
         )
