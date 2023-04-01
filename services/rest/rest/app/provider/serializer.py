@@ -7,7 +7,6 @@ class ProviderSerializer(ModelSerializer):
     class Meta:
         model = Provider
         fields = (
-            "id",
             "email",
             "first_name",
             "last_name",
