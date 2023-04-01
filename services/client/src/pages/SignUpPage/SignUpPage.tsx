@@ -8,8 +8,12 @@ import Input from '../../components/Input/Input';
 import SubmitButton from '../../components/SubmitButton/SubmitButton';
 import { supabase } from '../../supabaseClient';
 import ImageUpload from '../../components/ImageUpload/ImageUpload';
+import { useAppDispatch } from '../../hooks/useRedux';
+import { createProvider } from '../../redux/thunks/providerThunk';
+import { IProvider } from '../../types/IProvider';
 
 const SignUpPage = () => {
+  const dispatch = useAppDispatch();
   const { auth } = supabase;
   const [isLoading, setIsLoading] = useState(false);
   const {
@@ -25,17 +29,17 @@ const SignUpPage = () => {
     userDecisionTimeout: 5000,
   });
 
-  console.log(coords);
-
   const onSubmit: SubmitHandler<ISignUpFormValues> = async ({
     firstName,
     lastName,
     email,
+    phone,
     password,
     confirmPassword,
   }) => {
     try {
       if (password !== confirmPassword) return;
+      if (!coords) return;
       setIsLoading(true);
       const { data, error } = await auth.signUp({
         email,
@@ -44,10 +48,21 @@ const SignUpPage = () => {
           data: {
             firstName,
             lastName,
+            phone,
           },
         },
       });
       if (error) throw error;
+      const provider: IProvider = {
+        first_name: firstName,
+        last_name: lastName,
+        email,
+        phone,
+        latitude: coords.latitude,
+        longitude: coords.longitude,
+        activities: [],
+      };
+      dispatch(createProvider(provider));
     } catch (error) {
       console.log(error);
     } finally {
@@ -127,6 +142,27 @@ const SignUpPage = () => {
             label="Email"
             type="text"
             placeholder="Wpisz email"
+            value={value}
+            onChange={onChange}
+            error={errors.email?.message}
+          />
+        )}
+      />
+      <Controller
+        control={control}
+        name="phone"
+        defaultValue=""
+        rules={{
+          required: {
+            value: true,
+            message: 'Numer telefonu jest wymagany',
+          },
+        }}
+        render={({ field: { value, onChange } }) => (
+          <Input
+            label="Numer telefonu"
+            type="text"
+            placeholder="Wpisz numer telefonu"
             value={value}
             onChange={onChange}
             error={errors.email?.message}
