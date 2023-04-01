@@ -1,11 +1,12 @@
 import { BrowserRouter } from 'react-router-dom';
 
 import NavigationRoutes from '../../routes/NavigationRoutes';
+import SwipePage from '../../pages/SwipePage/SwipePage';
 
 const RouterProvider = () => {
   return (
     <BrowserRouter>
-      <NavigationRoutes />
+      <SwipePage />
     </BrowserRouter>
   );
 };

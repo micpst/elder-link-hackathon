@@ -14,3 +14,11 @@ export const createProvider = createAsyncThunk(
     }
   },
 );
+
+export const getProvider = () => async () => {
+  try {
+    const response = await axios.get('http://localhost:8000/rest/providers');
+  } catch (error) {
+    console.log(error);
+  }
+};
