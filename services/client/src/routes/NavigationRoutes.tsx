@@ -12,6 +12,7 @@ import SwipePage from '../pages/SwipePage/SwipePage';
 import LandingPage from '../pages/LandingPage/LandingPage';
 import CreateTicketPage from '../pages/CreateTicketPage/CreateTicketPage';
 import ProviderDashboard from '../pages/ProviderDashboard/ProviderDashboard';
+import LikedProvider from '../pages/LikedProviders/LikedProvider';
 
 const NavigationRoutes = () => {
   const location = useLocation();
@@ -22,6 +23,7 @@ const NavigationRoutes = () => {
           // Private pages
           <Route element={<SeniorRoute />}>
             <Route path={routePaths.swipe} element={<SwipePage />} />
+            <Route path={routePaths.liked} element={<LikedProvider />} />
           </Route>
           <Route element={<PrivateRoute />}>
             <Route element={<PrivateTemplate />}>
