@@ -1,4 +1,14 @@
-export const dummyTodos: string[] = ['Learn React', 'Learn Redux', 'Learn TypeScript'];
+export const routePaths = {
+  swipe: '/swipe',
+  login: '/login',
+  signup: '/signup',
+  settings: '/settings',
+};
+
 export const BREAKPOINTS = {
   mobile: 768,
+};
+
+export const imageExtensionsUpload = {
+  'image/*': ['.jpeg', '.jpg', '.bmp', '.svg', '.png', '.webp'],
 };

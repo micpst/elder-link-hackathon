@@ -1,6 +1,7 @@
-import LandingPage from './pages/LandingPage/LandingPage';
+import Providers from './providers';
+
 function App() {
-  return <LandingPage />;
+  return <Providers />;
 }
 
 export default App;

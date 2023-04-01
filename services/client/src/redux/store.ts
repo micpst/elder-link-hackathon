@@ -1,7 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 
+import providerReducer from './features/providerSlice';
+
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    provider: providerReducer,
+  },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,
