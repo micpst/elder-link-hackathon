@@ -9,6 +9,7 @@ import GuestTemplate from '../templates/GuestTemplate/GuestTemplate';
 import LogInPage from '../pages/LogInPage/LogInPage';
 import PrivateTemplate from '../templates/PrivateTemplate/PrivateTemplate';
 import SwipePage from '../pages/SwipePage/SwipePage';
+import LandingPage from '../pages/LandingPage/LandingPage';
 
 const NavigationRoutes = () => {
   const location = useLocation();
@@ -25,6 +26,7 @@ const NavigationRoutes = () => {
           </Route>
           // Guest pages
           <Route element={<GuestRoute />}>
+            <Route path={routePaths.home} element={<LandingPage />} />
             <Route element={<GuestTemplate />}>
               <Route path={routePaths.login} element={<LogInPage />} />
               <Route path={routePaths.signup} element={<SignUpPage />} />
