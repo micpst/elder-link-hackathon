@@ -22,7 +22,7 @@ const LandingPage = () => {
       ) : (
         <div className="flex max-h-screen p-10 w-full overflow-hidden">
           <Link
-            to={routePaths.login}
+            to={routePaths.createTicket}
             className="relative flex justify-center items-center grayscale hover:grayscale-0"
           >
             <img src={seniorImage} />
