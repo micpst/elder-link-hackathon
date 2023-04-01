@@ -33,6 +33,8 @@ services:
       context: ${PWD}/services/client
     environment:
       VITE_REST_URL: ${VITE_REST_URL}
+      VITE_SUPABASE_URL: ${VITE_SUPABASE_URL}
+      VITE_SUPABASE_KEY: ${VITE_SUPABASE_KEY}
     volumes:
       - ${PWD}/services/client/:/app
       - /app/node_modules
@@ -61,6 +63,7 @@ services:
       - "8000:8000"
     volumes:
       - ${PWD}/services/rest/:/app
+      - media:/app/media
     entrypoint: ["./docker-entrypoint.sh"]
     depends_on:
       db:
@@ -68,3 +71,4 @@ services:
 
 volumes:
   pgdata:
+  media:

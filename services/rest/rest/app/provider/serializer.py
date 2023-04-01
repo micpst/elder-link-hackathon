@@ -11,7 +11,11 @@ class ProviderSerializer(ModelSerializer):
             "first_name",
             "last_name",
             "phone",
+            "age",
+            "gender",
+            "max_distance",
             "longitude",
             "latitude",
             "activities",
+            "profile_photo",
         )
