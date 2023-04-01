@@ -165,7 +165,7 @@ MEDIA_URL = "/media/"
 
 # Path where media is stored
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
-print(MEDIA_ROOT)
+
 DJANGO_EMAIL_USER = getenv("DJANGO_EMAIL_USER", "")
 DJANGO_EMAIL_PASSWORD = getenv("DJANGO_EMAIL_PASSWORD", "")
 DJANGO_SMS_PHONE = getenv("DJANGO_SMS_PHONE", "")
