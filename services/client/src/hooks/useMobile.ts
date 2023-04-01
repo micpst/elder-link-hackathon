@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import { BREAKPOINTS } from "../constants";
+import { BREAKPOINTS } from '../constants';
 
 const useMobile = () => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -12,10 +12,10 @@ const useMobile = () => {
   useEffect(() => {
     handleWindowSizeChange();
 
-    window.addEventListener("resize", handleWindowSizeChange);
+    window.addEventListener('resize', handleWindowSizeChange);
 
     return () => {
-      window.removeEventListener("resize", handleWindowSizeChange);
+      window.removeEventListener('resize', handleWindowSizeChange);
     };
   }, []);
 
