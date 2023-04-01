@@ -6,7 +6,7 @@ const SubmitButton = ({ text, isLoading }: ISubmitButtonProps) => {
     <button
       type="submit"
       value={text}
-      className="bg-white text-black h-16 w-full rounded-lg font-medium shadow-md"
+      className="bg-green-400 text-white h-16 w-full rounded-lg font-medium shadow-md"
     >
       {!isLoading ? text : <Spinner />}
     </button>

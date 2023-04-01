@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useForm, Controller, SubmitHandler } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import { useGeolocated } from 'react-geolocated';
 
 import { ISignUpFormValues } from '../../types/ISignUpFormValues';
 import Input from '../../components/Input/Input';
@@ -16,6 +17,15 @@ const SignUpPage = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<ISignUpFormValues>();
+
+  const { coords, isGeolocationAvailable, isGeolocationEnabled } = useGeolocated({
+    positionOptions: {
+      enableHighAccuracy: true,
+    },
+    userDecisionTimeout: 5000,
+  });
+
+  console.log(coords);
 
   const onSubmit: SubmitHandler<ISignUpFormValues> = async ({
     firstName,
@@ -45,7 +55,8 @@ const SignUpPage = () => {
     }
   };
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex w-full flex-col gap-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="flex w-full flex-col gap-4 mt-16 md:w-96">
+      <h1 className="font-bold text-center text-2xl text-green-400">Zarejestruj się.</h1>
       <Controller
         control={control}
         name="photo"

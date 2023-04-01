@@ -9,7 +9,7 @@ const Input = ({ label, type, placeholder, value, onChange, error }: IInputProps
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        className="h-16 rounded-lg outline-none py-3 px-5 border-2 border-gray-300 placeholder:text-gray-400 shadow-md"
+        className="h-16 rounded-lg outline-none py-3 px-5 border-2 border-gray-300 placeholder:text-gray-400 shadow-md focus:border-green-400"
       />
       {error && <span className="text-red-500 text-sm">{error}</span>}
     </div>

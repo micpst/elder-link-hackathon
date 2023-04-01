@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 const Spinner = () => {
   return (
-    <div className="flex items-center justify-center gap-2">
+    <div className="flex items-center justify-center text-white gap-2">
       <svg
         aria-hidden="true"
         role="status"

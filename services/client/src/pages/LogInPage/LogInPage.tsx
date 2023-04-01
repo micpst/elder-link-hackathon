@@ -32,7 +32,8 @@ const LogInPage = () => {
     }
   };
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex w-full flex-col gap-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="flex w-full flex-col gap-4 md:w-96">
+      <h1 className="font-bold text-center text-2xl text-green-400">Zaloguj się.</h1>
       <Controller
         name="email"
         control={control}
@@ -79,7 +80,7 @@ const LogInPage = () => {
       <div className="flex gap-2 justify-center mt-4">
         <span>Nie masz jeszcze konta?</span>
         <Link to="/signup" className="font-semibold">
-          Zarejstruj się.
+          Zarejestruj się.
         </Link>
       </div>
     </form>
