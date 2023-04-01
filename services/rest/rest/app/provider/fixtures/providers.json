@@ -34,5 +34,185 @@
             "latitude": "53.119922",
             "activities": "[\"SHOPPING\", \"HOME_VISIT\", \"TECHNOLOGY_ASSISTANCE\"]"
         }
+    },
+    {
+        "model": "provider.provider",
+        "pk": 3,
+        "fields": {
+            "created_at": "2023-03-31T22:18:22.950Z",
+            "updated_at": "2023-03-31T22:18:22.950Z",
+            "first_name": "Patryk",
+            "last_name": "Sztuczka",
+            "email": "patryk.sz.kontakt@gmail.com",
+            "gender": "MALE",
+            "age": 22,
+            "max_distance": 25,
+            "phone": "+48532597899",
+            "longitude": "19.092004",
+            "latitude": "53.119922",
+            "activities": "[\"TRANSPORTATION\", \"SHOPPING\", \"HOME_VISIT\", \"TECHNOLOGY_ASSISTANCE\"]"
+        }
+    },
+    {
+        "model": "provider.provider",
+        "pk": 4,
+        "fields": {
+            "created_at": "2023-03-31T22:18:23.960Z",
+            "updated_at": "2023-03-31T22:18:23.350Z",
+            "first_name": "Szymon",
+            "last_name": "Bitkowski",
+            "email": "szymon.bit.kontakt@gmail.com",
+            "gender": "MALE",
+            "age": 22,
+            "max_distance": 30,
+            "phone": "+48532596999",
+            "longitude": "17.992004",
+            "latitude": "53.619922",
+            "activities": "[\"TRANSPORTATION\", \"SHOPPING\", \"HOME_VISIT\", \"MENTAL_HEALTH_SUPPORT\"]"
+        }
+    },
+    {
+        "model": "provider.provider",
+        "pk": 5,
+        "fields": {
+            "created_at": "2023-03-31T22:25:34.567Z",
+            "updated_at": "2023-03-31T22:27:01.234Z",
+            "first_name": "Jessica",
+            "last_name": "Garcia",
+            "email": "jessica.garcia@gmail.com",
+            "gender": "FEMALE",
+            "age": 32,
+            "max_distance": 10,
+            "phone": "+14155551234",
+            "longitude": "-78.243683",
+            "latitude": "34.052235",
+            "activities": "[\"SHOPPING\", \"HOME_VISIT\", \"MENTAL_HEALTH_SUPPORT\"]"
+        }
+    },
+    {
+        "model": "provider.provider",
+        "pk": 6,
+        "fields": {
+            "created_at": "2023-03-31T22:30:23.456Z",
+            "updated_at": "2023-03-31T22:32:01.234Z",
+            "first_name": "Emily",
+            "last_name": "Smith",
+            "email": "emily.smith@gmail.com",
+            "gender": "FEMALE",
+            "age": 19,
+            "max_distance": 3,
+            "phone": "+447781234567",
+            "longitude": "-0.127758",
+            "latitude": "51.507351",
+            "activities": "[\"HOME_VISIT\", \"MENTAL_HEALTH_SUPPORT\"]"
+        }
+    },
+    {
+        "model": "provider.provider",
+        "pk": 7,
+        "fields": {
+            "created_at": "2023-04-01T10:11:22.333Z",
+            "updated_at": "2023-04-01T10:11:22.333Z",
+            "first_name": "Mohammed",
+            "last_name": "Ali",
+            "email": "mohammed.ali@example.com",
+            "gender": "MALE",
+            "age": 52,
+            "max_distance": 30,
+            "phone": "+442079876543",
+            "longitude": "-0.124810",
+            "latitude": "51.511160",
+            "activities": "[\"TRANSPORTATION\", \"SHOPPING\", \"HOME_VISIT\", \"MENTAL_HEALTH_SUPPORT\", \"TECHNOLOGY_ASSISTANCE\"]"
+        }
+    },
+    {
+        "model": "provider.provider",
+        "pk": 8,
+        "fields": {
+            "created_at": "2023-04-01T12:45:10.987Z",
+            "updated_at": "2023-04-01T12:45:10.987Z",
+            "first_name": "Lucas",
+            "last_name": "Silva",
+            "email": "lucas.silva@example.com",
+            "gender": "MALE",
+            "age": 20,
+            "max_distance": 9,
+            "phone": "+551199999999",
+            "longitude": "-46.633309",
+            "latitude": "-23.548211",
+            "activities": "[\"TRANSPORTATION\", \"HOME_VISIT\"]"
+        }
+    },
+    {
+        "model": "provider.provider",
+        "pk": 9,
+        "fields": {
+            "created_at": "2023-03-31T22:18:24.340Z",
+            "updated_at": "2023-03-31T22:18:24.340Z",
+            "first_name": "Ewa",
+            "last_name": "Kowalska",
+            "email": "ewa.kowalska.kontakt@gmail.com",
+            "gender": "FEMALE",
+            "age": 29,
+            "max_distance": 15,
+            "phone": "+48577501507",
+            "longitude": "20.978460",
+            "latitude": "52.229676",
+            "activities": "[\"TRANSPORTATION\", \"SHOPPING\", \"HOME_VISIT\"]"
+        }
+    },
+    {
+        "model": "provider.provider",
+        "pk": 10,
+        "fields": {
+            "created_at": "2023-03-31T22:18:24.420Z",
+            "updated_at": "2023-03-31T22:18:24.420Z",
+            "first_name": "Karol",
+            "last_name": "Nowak",
+            "email": "karol.nowak.kontakt@gmail.com",
+            "gender": "MALE",
+            "age": 44,
+            "max_distance": 30,
+            "phone": "+48532496399",
+            "longitude": "19.456874",
+            "latitude": "51.759248",
+            "activities": "[\"TRANSPORTATION\", \"SHOPPING\", \"HOME_VISIT\", \"TECHNOLOGY_ASSISTANCE\"]"
+        }
+    },
+    {
+        "model": "provider.provider",
+        "pk": 11,
+        "fields": {
+            "created_at": "2023-03-31T22:18:24.500Z",
+            "updated_at": "2023-03-31T22:18:24.500Z",
+            "first_name": "Anna",
+            "last_name": "Kowalczyk",
+            "email": "anna.kowalczyk.kontakt@gmail.com",
+            "gender": "FEMALE",
+            "age": 22,
+            "max_distance": 3,
+            "phone": "+48532598899",
+            "longitude": "20.303878",
+            "latitude": "50.045532",
+            "activities": "[\"SHOPPING\", \"HOME_VISIT\", \"MENTAL_HEALTH_SUPPORT\"]"
+        }
+    },
+    {
+        "model": "provider.provider",
+        "pk": 12,
+        "fields": {
+            "created_at": "2023-03-31T22:18:24.580Z",
+            "updated_at": "2023-03-31T22:18:24.580Z",
+            "first_name": "Tomasz",
+            "last_name": "Jankowski",
+            "email": "tomasz.jankowski.kontakt@gmail.com",
+            "gender": "MALE",
+            "age": 22,
+            "max_distance": 6,
+            "phone": "+48530096399",
+            "longitude": "18.947884",
+            "latitude": "50.064651",
+            "activities": "[\"TRANSPORTATION\", \"SHOPPING\", \"HOME_VISIT\", \"MENTAL_HEALTH_SUPPORT\"]"
+        }
     }
 ]
