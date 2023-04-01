@@ -8,7 +8,7 @@ const LandingPage = () => {
   const isMobile = useMobile();
 
   return (
-    <div className="h-screen flex flex-col justify-center bg-green-400 md:flex">
+    <div className="h-screen flex flex-col justify-center bg-green-400 md:overflow-hidden">
       {isMobile ? (
         <>
           <h1 className="text-5xl font-bold text-center mb-20">Kim jesteś?</h1>
@@ -20,14 +20,14 @@ const LandingPage = () => {
       ) : (
         <>
           <div className='flex justify-around mt-40'>
-            <div className='flex-col  h-screen '>
+            <div className='flex-col'>
               <img src={grandpaImg} alt="Senior" className="rounded-3xl mb-12 h-2/4 shadow-xl" />
               <div className='justify-center flex'><CustomButton text='SENIOR' onClick={() => { }} /></div>
 
             </div>
 
             <h1 className="text-7xl font-bold text-center mt-80">Kim jesteś?</h1>
-            <div className='flex-col  h-screen'>
+            <div className='flex-col'>
               <img src={volunteerImg} alt="Senior" className="h-2/4 rounded-3xl mb-12 shadow-xl" />
               <div className='justify-center flex'><CustomButton text='Opiekun' onClick={() => { }} /></div>
             </div>

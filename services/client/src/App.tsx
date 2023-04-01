@@ -1,6 +1,6 @@
-import LandingPage from './pages/LandingPage/LandingPage';
+import SwipePage from './pages/SwipePage/SwipePage';
 function App() {
-  return <LandingPage />;
+  return <SwipePage />;
 }
 
 export default App;
