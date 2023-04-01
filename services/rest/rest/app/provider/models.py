@@ -26,8 +26,9 @@ class Provider(BaseModel):
     last_name = CharField(max_length=255, null=False, blank=False)
     email = EmailField(max_length=255, null=False, blank=False, unique=True)
     phone = CharField(max_length=20, null=False, blank=False, unique=True)
-    longitude = DecimalField(max_digits=9, decimal_places=6)
-    latitude = DecimalField(max_digits=9, decimal_places=6)
+    longitude = DecimalField(max_digits=9, decimal_places=7)
+    latitude = DecimalField(max_digits=9, decimal_places=7)
     activities = ArrayField(
-        CharField(max_length=255, choices=Activity.choices, null=False, blank=False)
+        base_field=CharField(max_length=255, choices=Activity.choices, null=False, blank=False),
+        blank=True,
     )
